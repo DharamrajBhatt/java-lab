@@ -1,1 +1,64 @@
 
+import java.util.*;
+import java.util.Scanner;
+public class testmorsecode{
+	
+	public static void main(String[] args){
+		
+		Scanner input =new Scanner(System.in);
+		
+		char[] alpha = {'A','B','C','D','E','F','G','H','I','J',
+		'K','L','M','N','O','P','Q','R','S','T','U','V','W','X',
+		'Y','Z','0','1','2','3','4','5','6','7','8','9',':','-','@'};
+		
+		String[] code={".-","-...","-.-.","-...",".","..-.","--.","....",
+		"..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.",
+		"...","-","..-","...-",".--","-..-","-.--","--..","-----",".----",
+		"..---","...--","....-",".....","-....","--...","---..","----.",
+		"---...","..--.-",".--.-."};
+	    
+	    int i,j,size;
+		String newText = "";
+		
+		System.out.println("Enter ant string to be morse coded");
+		String text = input.nextLine();
+		text = text.toUpperCase();
+		for(i=0;i<text.length();i++){
+			for(j=0;j<code.length;j++)
+			{
+				if(text.charAt(i) == alpha[j]){
+					newText += code[j];
+				
+				
+					break;
+				}
+			}
+		}
+		System.out.println("The String in Morse Code is "+newText);
+		
+		String str ="";
+		
+	 	
+	    System.out.println("Enter the size of the morse code string you want to decode");
+		size = input.nextInt();
+		
+		
+		//System.out.println(size);
+		for(i=0;i<size;i++)
+		{
+			 System.out.println("Enter any string to be morse coded");
+	     	 String morsecode = input.nextLine();
+				for(j=0;j<code.length;j++)
+				{
+					if(morsecode == code[j]){
+						str += alpha[j];
+						break;
+					}
+				}
+			
+		}
+		System.out.println(str);
+		
+	    
+	}
+}
